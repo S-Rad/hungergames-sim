@@ -1,0 +1,24 @@
+{
+  "name": "hungergames-sim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/S-Rad/hungergames-sim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/S-Rad/hungergames-sim/issues"
+  },
+  "homepage": "https://github.com/S-Rad/hungergames-sim#readme"
+}
