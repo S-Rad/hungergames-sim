@@ -29,8 +29,6 @@ client.on("message", async (message) => {
 
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  console.log("This is the args");
-  console.log(args);
 
   if (command === "ping") {
     const m = await message.channel.send("Ping?");
@@ -42,9 +40,14 @@ client.on("message", async (message) => {
   }
 
   if (command === "add" && args.length > 0) {
-    addPlayer(args);
+    message.channel.send("Added Player " + addPlayer(args));
   }
-  console.log(players);
+
+  if (command === "showplayers") {
+    const text = "Players: " + returnPlayers();
+    console.log(text);
+    message.channel.send(text);
+  }
 });
 
 function addPlayer(playerNameArray) {
@@ -54,7 +57,14 @@ function addPlayer(playerNameArray) {
   });
   playerName = playerName.slice(0, playerName.length - 1);
   players.push(playerName);
-  console.log("Added Player " + playerName);
+  return playerName;
+}
+
+function returnPlayers() {
+  let text = "";
+  players.forEach((player) => (text = text + player + ", "));
+  text = text.slice(0, text.length - 2);
+  return text;
 }
 
 client.login(config.token);
